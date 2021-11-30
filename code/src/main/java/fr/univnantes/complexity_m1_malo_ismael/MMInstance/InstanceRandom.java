@@ -1,4 +1,4 @@
-package fr.univnantes.complexity_m1_malo_ismael.InstanceRandom;
+package fr.univnantes.complexity_m1_malo_ismael.MMInstance;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,15 +7,15 @@ import java.util.Random;
 /**
  * A MIN-MAKESPAN problem instance with random values
  */
-public class InstanceRandom {
+public class InstanceRandom implements MMInstance {
     /**
      * All tasks : each value is duration of a task
      */
-    List<Integer> D;
+    private List<Integer> D;
     /**
      * All machines : each value is the cumulated duration of all done tasks
      */
-    List<Integer> M;
+    private List<Integer> M;
 
     /**
      *
@@ -38,5 +38,15 @@ public class InstanceRandom {
         for (int i = 0; i < m; i++) {
             M.add(0);
         }
+    }
+
+    @Override
+    public List<Integer> getMachines() {
+        return M;
+    }
+
+    @Override
+    public List<Integer> getTasks() {
+        return D;
     }
 }
