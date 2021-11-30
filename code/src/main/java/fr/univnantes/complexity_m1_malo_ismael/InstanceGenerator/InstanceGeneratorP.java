@@ -27,7 +27,7 @@ public class InstanceGeneratorP implements InstanceGenerator {
 
     @Override
     public void generateInstances () {
-
+        instanceP = new InstanceP(p);
     }
 
     @Override
