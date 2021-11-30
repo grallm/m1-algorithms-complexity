@@ -34,7 +34,6 @@ public class InstanceGeneratorP implements InstanceGenerator {
     @Override
     public void executeAlgorithms() {
         System.out.println("Executed Ip");
-        
         System.out.println("temps pour LSA : " + MMAlgorithms.LSA(instanceP) );
     }
 }
