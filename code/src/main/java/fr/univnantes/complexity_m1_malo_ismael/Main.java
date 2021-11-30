@@ -1,5 +1,6 @@
 package fr.univnantes.complexity_m1_malo_ismael;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -20,21 +21,9 @@ public class Main
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Entrez p :");
-        int p = scanner.nextInt();
 
-        // Number of different instances
-        System.out.println("Entrez le nombre d'instance différentes k :");
-        int k = scanner.nextInt();
+        // All instances
+        ArrayList<Integer> D = new ArrayList<Integer>();
 
-        // Minimal duration
-        System.out.println("Entrez la durée minimum dmin :");
-        int dmin = scanner.nextInt();
-
-        // Maximal duration
-        System.out.println("Entrez la durée maximum dmax :");
-        int dmax = scanner.nextInt();
-
-        System.out.println(p);
     }
 }
