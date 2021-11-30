@@ -1,4 +1,4 @@
-package fr.univ-nantes.complexity_m1_malo-ismael;
+package fr.univnantes.complexity_m1_malo_ismael;
 
 /**
  * Hello world!
