@@ -26,6 +26,10 @@ public class InstanceGeneratorP implements InstanceGenerator {
         scanner.close();
     }
 
+    public InstanceGeneratorP (int p) {
+        this.p = p;
+    }
+
     @Override
     public void generateInstances () {
         instanceP = new InstanceP(p);
