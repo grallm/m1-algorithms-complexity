@@ -1,5 +1,6 @@
 package fr.univnantes.complexity_m1_malo_ismael.InstanceGenerator;
 
+import fr.univnantes.complexity_m1_malo_ismael.MMAlgorithms;
 import fr.univnantes.complexity_m1_malo_ismael.MMInstance.InstanceP;
 import fr.univnantes.complexity_m1_malo_ismael.MMInstance.MMInstance;
 
@@ -33,5 +34,7 @@ public class InstanceGeneratorP implements InstanceGenerator {
     @Override
     public void executeAlgorithms() {
         System.out.println("Executed Ip");
+        
+        System.out.println("temps pour LSA : " + MMAlgorithms.LSA(instanceP) );
     }
 }

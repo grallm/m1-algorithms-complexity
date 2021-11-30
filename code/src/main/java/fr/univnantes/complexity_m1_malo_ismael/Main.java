@@ -35,5 +35,6 @@ public class Main
         scanner.close();
 
         instanceGenerator.generateInstances();
+        
     }
 }

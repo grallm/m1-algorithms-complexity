@@ -49,4 +49,29 @@ public class InstanceP implements MMInstance {
     public List<Integer> getTasks() {
         return D;
     }
+
+    @Override
+    public int getnbTask() {
+        // TODO Auto-generated method stub
+        return D.size();
+    }
+
+    @Override
+    public void addTaskToMachine(int pos, int task) {
+        // TODO Auto-generated method stub
+        M.set(pos,M.get(pos) + task);
+    }
+
+    @Override
+    public int getMachine(int nb) {
+        // TODO Auto-generated method stub
+        return M.get(nb);
+    }
+
+    @Override
+    public int nombreMachines() {
+        // TODO Auto-generated method stub
+        return M.size();
+    }
+    
 }
