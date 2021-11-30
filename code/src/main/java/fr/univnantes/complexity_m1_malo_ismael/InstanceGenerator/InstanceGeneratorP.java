@@ -39,12 +39,26 @@ public class InstanceGeneratorP implements InstanceGenerator {
 
         D = new ArrayList<>();
         M = new ArrayList<>();
-        for (int i = 0; i < p; i++) {
-            // Tasks generation
-            Random r = new Random();
-            D.add(r.nextInt(dmin = dmax) + dmin);
 
-            // Machines generation
+        /* Tasks generation */
+        // 4p tasks duration 1
+        int nbTasksDuration1 = 4 * p;
+        for (int i = 0; i < nbTasksDuration1; i++) {
+            D.add(1);
+        }
+
+        // 2p(p − 1) tasks duration 2
+        int nbTasksDuration2 = 2 * p * (p - 1);
+        for (int i = 0; i < nbTasksDuration2; i++) {
+            D.add(2);
+        }
+
+        // 1 duration 2p
+        D.add(2 * p);
+        /* End Tasks generation */
+
+        // Machines generation (2p)
+        for (int i = 0; i < 2 * p; i++) {
             M.add(0);
         }
     }
