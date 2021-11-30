@@ -2,7 +2,6 @@ package fr.univnantes.complexity_m1_malo_ismael.InstanceGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 public class InstanceGeneratorP implements InstanceGenerator {
@@ -27,16 +26,12 @@ public class InstanceGeneratorP implements InstanceGenerator {
 
         System.out.println("Entrez p :");
         p = scanner.nextInt();
+
+        scanner.close();
     }
 
     @Override
-    public void generateMachinesTasks () {
-        // Number of tasks
-        int n = 2 * p^2 + 2 * p + 1;
-
-        // Number of machines
-        int m = 2 * p;
-
+    public void generateInstances () {
         D = new ArrayList<>();
         M = new ArrayList<>();
 

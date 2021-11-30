@@ -1,20 +1,13 @@
 package fr.univnantes.complexity_m1_malo_ismael.InstanceGenerator;
 
+import fr.univnantes.complexity_m1_malo_ismael.InstanceRandom.InstanceRandom;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 public class InstanceGeneratorRandom implements InstanceGenerator {
-    /**
-     * All tasks : each value is duration of a task
-     */
-    List<Integer> D;
-    /**
-     * All machines : each value is the cumulated duration of all done tasks
-     */
-    List<Integer> M;
-
     // Number of different instances
     int m;
     // Number of different instances
@@ -25,6 +18,11 @@ public class InstanceGeneratorRandom implements InstanceGenerator {
     int dmin;
     // Maximal duration
     int dmax;
+
+    /**
+     * Generated instances
+     */
+    List<InstanceRandom> instanceRandoms;
 
     /**
      * Ask for variables and create a MIN-MAKESPAN problem instance
@@ -39,7 +37,7 @@ public class InstanceGeneratorRandom implements InstanceGenerator {
         m = scanner.nextInt();
 
         // Number of different instances
-        System.out.println("Entrez le nombre de tâches k :");
+        System.out.println("Entrez le nombre de tâches n :");
         n = scanner.nextInt();
 
         // Number of different instances
@@ -53,20 +51,18 @@ public class InstanceGeneratorRandom implements InstanceGenerator {
         // Maximal duration
         System.out.println("Entrez la durée maximum dmax :");
         dmax = scanner.nextInt();
+
+        scanner.close();
     }
 
     @Override
-    public void generateMachinesTasks () {
-        D = new ArrayList<>();
-        M = new ArrayList<>();
-        for (int i = 0; i < p; i++) {
-            // Tasks generation
-            Random r = new Random();
-            D.add(r.nextInt(dmin = dmax) + dmin);
-
-            // Machines generation
-            M.add(0);
+    public void generateInstances () {
+        instanceRandoms = new ArrayList<>();
+        for (int i = 0; i < k; i++) {
+            instanceRandoms.add(new InstanceRandom(m, n, dmax, dmin));
         }
+
+        System.out.println("\n" + k + " instances générées avec " + m + " machines et " + n + " tâches");
     }
 
     @Override

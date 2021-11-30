@@ -4,7 +4,6 @@ import fr.univnantes.complexity_m1_malo_ismael.InstanceGenerator.InstanceGenerat
 import fr.univnantes.complexity_m1_malo_ismael.InstanceGenerator.InstanceGeneratorP;
 import fr.univnantes.complexity_m1_malo_ismael.InstanceGenerator.InstanceGeneratorRandom;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -30,8 +29,11 @@ public class Main
         System.out.println("1. Génération d’une instance de type Ip");
         System.out.println("2. Génération aléatoire de plusieurs instances");
         InstanceGenerator instanceGenerator = scanner.nextInt() == 1
-                ? new InstanceGeneratorP()
-                : new InstanceGeneratorRandom();
+          ? new InstanceGeneratorP()
+          : new InstanceGeneratorRandom();
+        
+        scanner.close();
 
+        instanceGenerator.generateInstances();
     }
 }
