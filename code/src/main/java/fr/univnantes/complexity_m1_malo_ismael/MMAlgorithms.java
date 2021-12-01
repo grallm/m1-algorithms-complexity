@@ -29,6 +29,17 @@ public class MMAlgorithms {
         }
 
         // Premiere tache de la liste
+        int machineMaxValue = machines.get(0);
+        //Calcul la machine la plus longue
+        for (int i = 1; i < machines.size(); i++) {
+            int machine = machines.get(i);
+            if (machineMaxValue < machine) {
+                machineMaxValue = machine;
+            }
+        }
+        // Calcul des ratios :
+
+        // Premiere tache de la liste
         double borneMax = tasks.get(0);
         // Borne inférieur maximum
         for (int i = 1; i < tasks.size(); i++) {
@@ -37,6 +48,7 @@ public class MMAlgorithms {
                 borneMax = task;
             }
         }
+
         // Calcul borne inférieur moyenne
         double borneMoy = 0;
         for (int task : tasks) {
@@ -44,17 +56,9 @@ public class MMAlgorithms {
         }
         borneMoy = borneMoy / machines.size();
 
-        // Premiere tache de la liste
-        int machineMaxValue = machines.get(0);
-        // Borne inférieur maximum
-        for (int i = 1; i < machines.size(); i++) {
-            int machine = machines.get(i);
-            if (machineMaxValue < machine) {
-                machineMaxValue = machine;
-            }
-        }
         double B = Math.max(borneMax, borneMoy);
         double ratio = machineMaxValue / B;
+    
         return ratio;
     }
 

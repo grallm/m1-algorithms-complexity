@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TestInstanceGeneratorP {
     @Test
     public void testInstanceGeneratorP_p10 () {
-        int p = 11;
+        int p = 25;
         InstanceGeneratorP instanceGeneratorP = new InstanceGeneratorP(p);
 
         instanceGeneratorP.generateInstances();
