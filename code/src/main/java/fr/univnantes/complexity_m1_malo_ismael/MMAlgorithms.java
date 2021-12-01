@@ -6,35 +6,37 @@ import java.util.List;
 
 public class MMAlgorithms {
     public static int LSA (MMInstance instance) {
-        //temps avant de commencer les taches
-        int tempsdb = (int) System.currentTimeMillis();
-        int machine = 0;
-
         List<Integer> machines = instance.getMachines();
         List<Integer> tasks = instance.getTasks();
-
-        //Parcours toute les taches
-        for(int task =0; task < tasks.size(); task++){
-            Boolean affecter = false;
-           //Affecte une tache a une machine de libre
-            while( !affecter ){
-                //Si une machine est libre alors on attribue la tache
-                if(machines.get(machine) <= (int) System.currentTimeMillis()){
-                    affecter = true;
-                    instance.addTaskToMachine(machine, task);
-                  //sinon on change de machine
-                }else{
-                    if(machine < machines.size() ){
-                        machine ++;
-                    }else{
-                        machine = 0 ;
-                      
-                    }
+        System.out.println(machines.toString());
+        System.out.println(tasks.toString());
+        //Parcours tous les taches
+        for(int task : tasks){
+            //Premiere machine de la liste
+            int machineMinIdx = 0 ;
+            int machineMinValue = machines.get(0);
+            //Parcours des machines pour trouver la première disponible
+            for(int i = 1; i < machines.size(); i++){
+                int machine = machines.get(i);
+                if(machineMinValue > machine){
+                    machineMinIdx = i;
+                    machineMinValue = machine;
                 }
             }
+            //Ajout de la durée de la tache à la première machine disponible
+            machines.set(machineMinIdx, machineMinValue + task);
         }
-        // Calcule et renvoie temps
-        return  (int) System.currentTimeMillis() - tempsdb;
+        System.out.println(machines.toString());
+        //Premiere machine de la liste
+        int machineMaxValue = machines.get(0);
+        //Parcours des machines pour trouver la machine qui a la durée la plus grande
+        for(int i = 1; i < machines.size(); i++){
+            int machine = machines.get(i);
+            if(machineMaxValue < machine){
+                machineMaxValue = machine;
+            }
+        }
+        return machineMaxValue;
     }
 
     /**

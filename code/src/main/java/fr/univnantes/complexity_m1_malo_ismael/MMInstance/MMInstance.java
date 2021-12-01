@@ -17,16 +17,6 @@ public abstract class MMInstance {
 
     public List<Integer> getTasks() { return D; }
 
-    public int getnbTask() { return D.size(); }
-
-    public void addTaskToMachine(int pos , int task) {
-        M.set(pos,M.get(pos) + task);
-    }
-
-    public int getMachine(int nb) { return M.get(nb); }
-
-    public int nombreMachines() { return M.size(); }
-
     /**
      * Sort tasks in descending order
      * @return
