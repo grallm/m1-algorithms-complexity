@@ -3,16 +3,7 @@ package fr.univnantes.complexity_m1_malo_ismael.MMInstance;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InstanceP implements MMInstance {
-    /**
-     * All tasks : each value is duration of a task
-     */
-    private List<Integer> D;
-    /**
-     * All machines : each value is the cumulated duration of all done tasks
-     */
-    private List<Integer> M;
-
+public class InstanceP extends MMInstance {
     public InstanceP (int p) {
         D = new ArrayList<>();
         M = new ArrayList<>();
@@ -39,39 +30,4 @@ public class InstanceP implements MMInstance {
             M.add(0);
         }
     }
-
-    @Override
-    public List<Integer> getMachines() {
-        return M;
-    }
-
-    @Override
-    public List<Integer> getTasks() {
-        return D;
-    }
-
-    @Override
-    public int getnbTask() {
-        // TODO Auto-generated method stub
-        return D.size();
-    }
-
-    @Override
-    public void addTaskToMachine(int pos, int task) {
-        // TODO Auto-generated method stub
-        M.set(pos,M.get(pos) + task);
-    }
-
-    @Override
-    public int getMachine(int nb) {
-        // TODO Auto-generated method stub
-        return M.get(nb);
-    }
-
-    @Override
-    public int nombreMachines() {
-        // TODO Auto-generated method stub
-        return M.size();
-    }
-    
 }

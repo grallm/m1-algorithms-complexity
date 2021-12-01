@@ -37,11 +37,24 @@ public class MMAlgorithms {
         return  (int) System.currentTimeMillis() - tempsdb;
     }
 
+    /**
+     * Run the LPT algorithm on an instance
+     * @param instance
+     * @return
+     */
     public static int LPT (MMInstance instance) {
+        // Tâches ordonnées de façon décroissante
+
+
         // Calcule et renvoie temps
         return 10;
     }
 
+    /**
+     * Run the RMA algorithm on an instance
+     * @param instance
+     * @return
+     */
     public static int RMA (MMInstance instance) {
         // Calcule et renvoie temps
         return 10;
