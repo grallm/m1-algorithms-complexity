@@ -44,8 +44,26 @@ public class MMAlgorithms {
      */
     public static int LPT (MMInstance instance) {
         // Tâches ordonnées de façon décroissante
+        List<Integer> tasks = instance.taskSortDesc();
 
-
+        // Ajouter chaque tâche à la machine ayant le moins de travail
+        List<Integer> machines = instance.getMachines();
+        System.out.println("here");
+        System.out.println(machines.toString());
+        for (int task : tasks) {
+            // Trouver machine minimum
+            int minMachineIdx = 0;
+            int minMachineValue = machines.get(0);
+            for (int i = 1; i < machines.size(); i++) {
+                if (machines.get(i) < minMachineValue) {
+                    minMachineIdx = i;
+                    minMachineValue = machines.get(i);
+                }
+            }
+            // Ajouter tâche à la machine
+            machines.set(minMachineIdx, machines.get(minMachineIdx) + task);
+        }
+        System.out.println(machines.toString());
         // Calcule et renvoie temps
         return 10;
     }

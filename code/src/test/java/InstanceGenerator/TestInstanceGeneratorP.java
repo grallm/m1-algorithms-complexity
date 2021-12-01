@@ -9,6 +9,7 @@ public class TestInstanceGeneratorP {
         int p = 10;
         InstanceGeneratorP instanceGeneratorP = new InstanceGeneratorP(p);
 
+        instanceGeneratorP.generateInstances();
         instanceGeneratorP.executeAlgorithms();
     }
 }

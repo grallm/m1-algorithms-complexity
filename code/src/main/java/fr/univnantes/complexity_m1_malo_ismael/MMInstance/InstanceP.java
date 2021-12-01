@@ -30,4 +30,9 @@ public class InstanceP extends MMInstance {
             M.add(0);
         }
     }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }
