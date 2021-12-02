@@ -22,7 +22,7 @@ La taille du certificat et la verification sont polynomiales donc on peut conclu
 
 ## 3. Appliquer l’algorithme Approx-SGC sur le graphe orienté ci-dessus, en utilisant la numérotation des sommets qui y est indiquée. En particulier, indiquer les contenus de A1, A2 et A′
 
-![Graphe G](img/G.PNG)
+![](img/G.PNG)
 
 ### A) Attribution aux hasards des sommets :
 
@@ -30,14 +30,14 @@ La valeur des sommets est deja attribué tel que 1<=p<=n donc on garde cette att
 
 ### B) Séparation des Arcs dans l'ensemble A1 ou A2.
 
-|   A1   |   A2   |
-|--------|--------|
-| (1,4)  |  (4,3) |
-| (1,7)  |  (7,5) |
-| (3,7)  |  (3,2) |
-| (2,5)  |  (7,6) |
-| (5,8)  |  (6,1) |
-|        |  (8,6) |
+| A1    | A2    |
+| ----- | ----- |
+| (1,4) | (4,3) |
+| (1,7) | (7,5) |
+| (3,7) | (3,2) |
+| (2,5) | (7,6) |
+| (5,8) | (6,1) |
+|       | (8,6) |
 
 ### C) L'ensemble qui contient le plus d'Arcs est l'ensemble A2 donc A' = A2.
 
@@ -54,7 +54,7 @@ La valeur des sommets est deja attribué tel que 1<=p<=n donc on garde cette att
 
 ## 6. Proposer un exemple de graphe orienté G à n = 5 sommets pour lequel Approx-SGC ne fournit pas une solution optimale au problème MAX-SGC. Justifier.
 
-![Graphe G question 6](img/question6.PNG)
+![](img/question6.PNG)
 
 Il y a autant d'ensemble A1 que A2 ainsi Approx-SGC ne fournit pas une solution optimale sans graphe. Car la solution optimal du graphe est tout les sommets soit 5.
 
@@ -75,7 +75,7 @@ Car l'algorithme Approx-SGC partage les arrêtes en deux parties puis on choisit
 
 On a :
 
-$$\frac{m}{2} \geq opt(G) \geq m $$
+$$\frac{m}{2}\geq{opt(G)}{\geq{m}}$$
 
 Ainsi le ratio d'approximation est 2.
 
@@ -84,4 +84,4 @@ Ainsi le ratio d'approximation est 2.
  La figure possède 11 arrêtes , l'ensemble le plus grand possède 6 éléments.
  
  Donc :  
- $$ ratio  = \frac{11}{6} = 1.83 $$ 
+ $$ratio=\frac{11}{6}=1.83$$ 
