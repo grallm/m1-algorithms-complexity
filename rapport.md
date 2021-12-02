@@ -62,28 +62,28 @@ Il y a autant d'ensemble A1 que A2 ainsi Approx-SGC ne fournit pas une solution 
 
 La borne maximum est un graphe qui ne possède pas de circuit ainsi opt(G) est m. m qui est le nombre d'Arcs.
 
-$${opt(G)}\leq{m}$$
+$$ {opt(G)}\leq{m} $$
 
 ## 8. Pour tout graphe orienté G, donner une borne inférieure pour sol(G), qui dépend aussi de m. Justifier.
 
 La borne inférieur pour sol(G) est :
 
-$${sol(G)=}\geq{\frac{m}{2}}$$
+$$ {sol(G)=}\geq{\frac{m}{2}} $$
 Car l'algorithme Approx-SGC partage les arrêtes en deux parties puis on choisit la plus grande partie. Ainsi le plus petit ensemble possède donc la moitié des arrêtes.
 
- $$ {sol(G)}\geq{\frac{m}{2}}$$
+ $$ {sol(G)}\geq{\frac{m}{2}} $$
 
 ## 9. En déduire un ratio d’approximation pour l’algorithme Approx-SGC.
 
 On a :
 
-$$\frac{m}{2}\geq{opt(G)}{\geq{m}}$$
+$$ \frac{m}{2}\geq{opt(G)}{\geq{m}} $$
 
-Ainsi le ratio d'approximation est 2.
+Ainsi le ratio d'approximation est de 2.
 
 ## 10. Quel ratio d’approximation est obtenu par Approx-SGC sur le graphe orienté de la figure ? Justifier.
 
  La figure possède 11 arrêtes , l'ensemble le plus grand possède 6 éléments.
  
  Donc :  
- $$ratio=\frac{11}{6}=1.83$$ 
+ $$ ratio=\frac{11}{6}=1.83 $$ 
