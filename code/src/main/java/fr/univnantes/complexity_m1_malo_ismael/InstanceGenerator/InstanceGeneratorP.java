@@ -45,5 +45,9 @@ public class InstanceGeneratorP implements InstanceGenerator {
         AlgorithmResult lpt = MMAlgorithms.LPT((MMInstance) instanceP.clone());
         System.out.println("\nRésultat LSA : " + lpt.getResult());
         System.out.println("Ratio LSA : " + lpt.getRatio());
+
+        AlgorithmResult RMA = MMAlgorithms.RMA((MMInstance) instanceP.clone());
+        System.out.println("\nRésultat RMA : " + RMA.getResult());
+        System.out.println("Ratio RMA : " + RMA.getRatio());
     }
 }

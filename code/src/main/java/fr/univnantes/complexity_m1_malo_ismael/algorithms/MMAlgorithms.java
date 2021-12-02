@@ -3,6 +3,7 @@ package fr.univnantes.complexity_m1_malo_ismael.algorithms;
 import fr.univnantes.complexity_m1_malo_ismael.MMInstance.MMInstance;
 
 import java.util.List;
+import java.util.Random;
 
 public class MMAlgorithms {
     /**
@@ -68,7 +69,7 @@ public class MMAlgorithms {
 
     /**
      * Run the RMA algorithm on an instance
-     * 
+     * Randomly assign a task to a machine
      * @param instance
      * @return
      */
@@ -78,9 +79,15 @@ public class MMAlgorithms {
 
         List<Integer> tasks = instance.getTasks();
 
+        Random random = new Random();
+        for (int task : tasks) {
+            // Randomly assign a task to a machine
+            int machineIdx = random.nextInt(machines.size());
+            machines.set(machineIdx, machines.get(machineIdx) + task);
+        }
       
         // Calcule et renvoie temps
-        return null;
+        return calcAlgoResult(tasks, machines);
     }
 
     private static int maxMachine(List<Integer> machines) {

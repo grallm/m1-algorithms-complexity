@@ -5,6 +5,15 @@ import org.junit.Test;
 
 public class TestInstanceGeneratorP {
     @Test
+    public void testInstanceGeneratorP_p1 () {
+        int p = 1;
+        InstanceGeneratorP instanceGeneratorP = new InstanceGeneratorP(p);
+
+        instanceGeneratorP.generateInstances();
+        instanceGeneratorP.executeAlgorithms();
+    }
+
+    @Test
     public void testInstanceGeneratorP_p10 () {
         int p = 10;
         InstanceGeneratorP instanceGeneratorP = new InstanceGeneratorP(p);
