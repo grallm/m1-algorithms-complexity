@@ -1,49 +1,16 @@
-package fr.univnantes.complexity_m1_malo_ismael;
+package fr.univnantes.complexity_m1_malo_ismael.algorithms;
 
 import fr.univnantes.complexity_m1_malo_ismael.MMInstance.MMInstance;
 
 import java.util.List;
 
 public class MMAlgorithms {
-    public static int maxMachine(List<Integer> machines) {
-        // Premiere tache de la liste
-        int machineMaxValue = machines.get(0);
-        // Calcul la machine la plus longue
-        for (int i = 1; i < machines.size(); i++) {
-            int machine = machines.get(i);
-            if (machineMaxValue < machine) {
-                machineMaxValue = machine;
-            }
-        }
-        return machineMaxValue;
-
-    }
-
-    public static double borneInfMax(List<Integer> tasks) {
-        // Premiere tache de la liste
-        double borneMax = tasks.get(0);
-        // Borne inférieur maximum
-        for (int i = 1; i < tasks.size(); i++) {
-            int task = tasks.get(i);
-            if (borneMax < task) {
-                borneMax = task;
-            }
-        }
-        return borneMax;
-
-    }
-
-    public static double borneInfMoy(List<Integer> tasks, List<Integer> machines) {
-        // Calcul borne inférieur moyenne
-        double borneMoy = 0;
-        for (int task : tasks) {
-            borneMoy += task;
-        }
-        borneMoy = borneMoy / machines.size();
-        return borneMoy;
-    }
-
-    public static double LSA(MMInstance instance) {
+    /**
+     * Run the LSA algorithm on an instance
+     * @param instance
+     * @return
+     */
+    public static AlgorithmResult LSA(MMInstance instance) {
         // Ajouter chaque tâche à la machine ayant le moins de travail
         List<Integer> machines = instance.getMachines();
 
@@ -66,21 +33,7 @@ public class MMAlgorithms {
             machines.set(machineMinIdx, machineMinValue + task);
         }
 
-        // Calcul la machine la plus longue
-
-        int machineMaxValue = maxMachine(machines);
-        // Calcul des ratios :
-
-        // Borne inférieur maximum
-        double borneMax = borneInfMax(tasks);
-
-        // Calcul borne inférieur moyenne
-        double borneMoy = borneInfMoy(tasks, machines);
-
-        double B = Math.max(borneMax, borneMoy);
-        double ratio = machineMaxValue / B;
-
-        return ratio;
+        return calcAlgoResult(tasks, machines);
     }
 
     /**
@@ -89,12 +42,12 @@ public class MMAlgorithms {
      * @param instance
      * @return
      */
-    public static int LPT(MMInstance instance) {
+    public static AlgorithmResult LPT(MMInstance instance) {
         // Tâches ordonnées de façon décroissante
         List<Integer> tasks = instance.taskSortDesc();
 
         List<Integer> machines = instance.getMachines();
-        System.out.println(machines);
+
         // Ajouter chaque tâche à la machine ayant le moins de travail
         for (int task : tasks) {
             // Trouver machine minimum
@@ -109,9 +62,8 @@ public class MMAlgorithms {
             // Ajouter tâche à la machine
             machines.set(minMachineIdx, machines.get(minMachineIdx) + task);
         }
-        System.out.println(machines);
-        // Calcule et renvoie temps
-        return 10;
+
+        return calcAlgoResult(tasks, machines);
     }
 
     /**
@@ -120,7 +72,7 @@ public class MMAlgorithms {
      * @param instance
      * @return
      */
-    public static int RMA(MMInstance instance) {
+    public static AlgorithmResult RMA(MMInstance instance) {
         // Ajouter chaque tâche à la machine ayant le moins de travail
         List<Integer> machines = instance.getMachines();
 
@@ -128,6 +80,61 @@ public class MMAlgorithms {
 
       
         // Calcule et renvoie temps
-        return 10;
+        return null;
+    }
+
+    private static int maxMachine(List<Integer> machines) {
+        // Premiere tache de la liste
+        int machineMaxValue = machines.get(0);
+        // Calcul la machine la plus longue
+        for (int i = 1; i < machines.size(); i++) {
+            int machine = machines.get(i);
+            if (machineMaxValue < machine) {
+                machineMaxValue = machine;
+            }
+        }
+        return machineMaxValue;
+
+    }
+
+    private static double borneInfMax(List<Integer> tasks) {
+        // Premiere tache de la liste
+        double borneMax = tasks.get(0);
+        // Borne inférieur maximum
+        for (int i = 1; i < tasks.size(); i++) {
+            int task = tasks.get(i);
+            if (borneMax < task) {
+                borneMax = task;
+            }
+        }
+        return borneMax;
+
+    }
+
+    private static double borneInfMoy(List<Integer> tasks, List<Integer> machines) {
+        // Calcul borne inférieur moyenne
+        double borneMoy = 0;
+        for (int task : tasks) {
+            borneMoy += task;
+        }
+        borneMoy = borneMoy / machines.size();
+        return borneMoy;
+    }
+
+    private static AlgorithmResult calcAlgoResult (List<Integer> tasks, List<Integer> machines) {
+        // Calcul la machine la plus longue
+        int machineMaxValue = maxMachine(machines);
+
+        // Borne inférieur maximum
+        double borneMax = borneInfMax(tasks);
+
+        // Calcul borne inférieur moyenne
+        double borneMoy = borneInfMoy(tasks, machines);
+
+        // Calcul des ratios :
+        double B = Math.max(borneMax, borneMoy);
+        double ratio = machineMaxValue / B;
+
+        return new AlgorithmResult(ratio, machineMaxValue, tasks, machines);
     }
 }

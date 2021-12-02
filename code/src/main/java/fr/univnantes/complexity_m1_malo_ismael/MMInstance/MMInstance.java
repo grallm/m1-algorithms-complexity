@@ -24,12 +24,12 @@ public abstract class MMInstance implements Cloneable {
      */
     public List<Integer> taskSortDesc() {
         // Sort ASC
-        Collections.sort(M);
+        Collections.sort(D);
 
         // Reverse for DESC
-        Collections.reverse(M);
+        Collections.reverse(D);
 
-        return M;
+        return D;
     }
 
     @Override

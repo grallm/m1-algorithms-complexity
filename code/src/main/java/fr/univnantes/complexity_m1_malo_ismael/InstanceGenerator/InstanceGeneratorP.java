@@ -1,11 +1,10 @@
 package fr.univnantes.complexity_m1_malo_ismael.InstanceGenerator;
 
-import fr.univnantes.complexity_m1_malo_ismael.MMAlgorithms;
+import fr.univnantes.complexity_m1_malo_ismael.algorithms.AlgorithmResult;
+import fr.univnantes.complexity_m1_malo_ismael.algorithms.MMAlgorithms;
 import fr.univnantes.complexity_m1_malo_ismael.MMInstance.InstanceP;
 import fr.univnantes.complexity_m1_malo_ismael.MMInstance.MMInstance;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class InstanceGeneratorP implements InstanceGenerator {
@@ -37,8 +36,14 @@ public class InstanceGeneratorP implements InstanceGenerator {
 
     @Override
     public void executeAlgorithms() {
-        System.out.println("Executing Ip");
-        System.out.println("temps pour LSA : " + MMAlgorithms.LSA((MMInstance) instanceP.clone()) );
-        System.out.println("temps pour LPT : " + MMAlgorithms.LPT((MMInstance) instanceP.clone()) );
+        System.out.println("Executing Ip (p = " + this.p + ")");
+
+        AlgorithmResult lsa = MMAlgorithms.LSA((MMInstance) instanceP.clone());
+        System.out.println("\nRésultat LSA : " + lsa.getResult());
+        System.out.println("Ratio LSA : " + lsa.getRatio());
+
+        AlgorithmResult lpt = MMAlgorithms.LPT((MMInstance) instanceP.clone());
+        System.out.println("\nRésultat LSA : " + lpt.getResult());
+        System.out.println("Ratio LSA : " + lpt.getRatio());
     }
 }
