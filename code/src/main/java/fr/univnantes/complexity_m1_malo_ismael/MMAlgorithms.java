@@ -93,10 +93,9 @@ public class MMAlgorithms {
         // Tâches ordonnées de façon décroissante
         List<Integer> tasks = instance.taskSortDesc();
 
-        // Ajouter chaque tâche à la machine ayant le moins de travail
         List<Integer> machines = instance.getMachines();
-        System.out.println("here");
-        System.out.println(machines.toString());
+        System.out.println(machines);
+        // Ajouter chaque tâche à la machine ayant le moins de travail
         for (int task : tasks) {
             // Trouver machine minimum
             int minMachineIdx = 0;
@@ -110,7 +109,7 @@ public class MMAlgorithms {
             // Ajouter tâche à la machine
             machines.set(minMachineIdx, machines.get(minMachineIdx) + task);
         }
-        System.out.println(machines.toString());
+        System.out.println(machines);
         // Calcule et renvoie temps
         return 10;
     }

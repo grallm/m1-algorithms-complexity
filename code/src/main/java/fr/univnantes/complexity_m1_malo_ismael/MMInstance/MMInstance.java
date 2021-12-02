@@ -1,9 +1,10 @@
 package fr.univnantes.complexity_m1_malo_ismael.MMInstance;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class MMInstance {
+public abstract class MMInstance implements Cloneable {
     /**
      * All tasks : each value is duration of a task
      */
@@ -29,5 +30,20 @@ public abstract class MMInstance {
         Collections.reverse(M);
 
         return M;
+    }
+
+    @Override
+    public Object clone() {
+        MMInstance clone = null;
+        try {
+            clone = (MMInstance) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+
+        clone.M = new ArrayList<>(this.M);
+        clone.D = new ArrayList<>(this.D);
+
+        return clone;
     }
 }

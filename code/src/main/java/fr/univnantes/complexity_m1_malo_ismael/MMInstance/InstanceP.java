@@ -1,7 +1,6 @@
 package fr.univnantes.complexity_m1_malo_ismael.MMInstance;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class InstanceP extends MMInstance {
     public InstanceP (int p) {
@@ -29,10 +28,5 @@ public class InstanceP extends MMInstance {
         for (int i = 0; i < 2 * p; i++) {
             M.add(0);
         }
-    }
-
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
     }
 }
