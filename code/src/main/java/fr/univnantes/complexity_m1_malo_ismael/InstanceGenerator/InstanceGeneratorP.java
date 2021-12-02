@@ -38,6 +38,9 @@ public class InstanceGeneratorP implements InstanceGenerator {
     public void executeAlgorithms() {
         System.out.println("Executing Ip (p = " + this.p + ")");
 
+        System.out.println("\nBorne inférieure \"maximum\" : " + instanceP.maxTask());
+        System.out.println("Borne inférieure \"moyenne\" : " + instanceP.optiDuration());
+
         AlgorithmResult lsa = MMAlgorithms.LSA((MMInstance) instanceP.clone());
         System.out.println("\nRésultat LSA : " + lsa.getResult());
         System.out.println("Ratio LSA : " + lsa.getRatio());

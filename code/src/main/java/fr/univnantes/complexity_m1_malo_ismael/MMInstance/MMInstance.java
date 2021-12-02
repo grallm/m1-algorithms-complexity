@@ -46,4 +46,16 @@ public abstract class MMInstance implements Cloneable {
 
         return clone;
     }
+
+    public int maxTask () {
+        return Collections.max(this.D);
+    }
+
+    /**
+     * Borne inférieur moyenne : Somme des tâches / nombre machines
+     * @return
+     */
+    public int optiDuration () {
+        return D.stream().mapToInt(i -> i).sum() / M.size();
+    }
 }
