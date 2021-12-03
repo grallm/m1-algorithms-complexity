@@ -100,7 +100,7 @@ public class InstanceGeneratorRandom implements InstanceGenerator {
         }
 
         System.out.println("\nRatio LSA : " + lsaRatioAvg / instanceRandoms.size());
-        System.out.println("Ratio LSA : " + lptRatioAvg / instanceRandoms.size());
+        System.out.println("Ratio LPT : " + lptRatioAvg / instanceRandoms.size());
         System.out.println("Ratio RMA : " + rmaRatioAvg / instanceRandoms.size());
     }
 }

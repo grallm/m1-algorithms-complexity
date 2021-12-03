@@ -61,7 +61,7 @@ public class MMAlgorithms {
                 }
             }
             // Ajouter tâche à la machine
-            machines.set(minMachineIdx, machines.get(minMachineIdx) + task);
+            machines.set(minMachineIdx, minMachineValue + task);
         }
 
         return calcAlgoResult(tasks, machines);

@@ -30,4 +30,39 @@ public class TestInstanceGeneratorP {
         instanceGeneratorP.generateInstances();
         instanceGeneratorP.executeAlgorithms();
     }
+
+    @Test
+    public void testInstanceP_LSA_Q3 () {
+        for (int p = 1; p <= 10; p++) {
+            InstanceGeneratorP instanceGeneratorP = new InstanceGeneratorP(p);
+            instanceGeneratorP.generateInstances();
+            System.out.println(instanceGeneratorP.ratioLsa());
+        }
+        System.out.println();
+
+        for (int p = 15; p <= 60; p+=5) {
+            InstanceGeneratorP instanceGeneratorP = new InstanceGeneratorP(p);
+            instanceGeneratorP.generateInstances();
+            System.out.println(instanceGeneratorP.ratioLsa());
+        }
+        System.out.println();
+
+        for (int p = 70; p <= 90; p+=10) {
+            InstanceGeneratorP instanceGeneratorP = new InstanceGeneratorP(p);
+            instanceGeneratorP.generateInstances();
+            System.out.println(instanceGeneratorP.ratioLsa());
+        }
+        System.out.println();
+
+        for (int p = 100; p <= 200; p+=20) {
+            InstanceGeneratorP instanceGeneratorP = new InstanceGeneratorP(p);
+            instanceGeneratorP.generateInstances();
+            System.out.println(instanceGeneratorP.ratioLsa());
+        }
+        System.out.println();
+
+        InstanceGeneratorP instanceGeneratorP = new InstanceGeneratorP(300);
+        instanceGeneratorP.generateInstances();
+        System.out.println(instanceGeneratorP.ratioLsa());
+    }
 }
