@@ -142,11 +142,6 @@ public class MMAlgorithms {
         double B = Math.max(borneMax, borneMoy);
         double ratio = machineMaxValue / B;
 
-        System.out.println(machines);
-        System.out.println(ratio);
-        System.out.println(borneMax);
-        System.out.println(B);
-
         return new AlgorithmResult(ratio, machineMaxValue, tasks, machines);
     }
 }

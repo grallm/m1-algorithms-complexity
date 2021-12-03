@@ -100,4 +100,39 @@ public class TestInstanceGeneratorP {
         instanceGeneratorP.generateInstances();
         System.out.println(instanceGeneratorP.ratioLpt());
     }
+
+    @Test
+    public void testInstanceP_RMA_Q5 () {
+        for (int p = 1; p <= 10; p++) {
+            InstanceGeneratorP instanceGeneratorP = new InstanceGeneratorP(p);
+            instanceGeneratorP.generateInstances();
+            System.out.println(instanceGeneratorP.ratioRma());
+        }
+        System.out.println();
+
+        for (int p = 15; p <= 60; p+=5) {
+            InstanceGeneratorP instanceGeneratorP = new InstanceGeneratorP(p);
+            instanceGeneratorP.generateInstances();
+            System.out.println(instanceGeneratorP.ratioRma());
+        }
+        System.out.println();
+
+        for (int p = 70; p <= 90; p+=10) {
+            InstanceGeneratorP instanceGeneratorP = new InstanceGeneratorP(p);
+            instanceGeneratorP.generateInstances();
+            System.out.println(instanceGeneratorP.ratioRma());
+        }
+        System.out.println();
+
+        for (int p = 100; p <= 200; p+=20) {
+            InstanceGeneratorP instanceGeneratorP = new InstanceGeneratorP(p);
+            instanceGeneratorP.generateInstances();
+            System.out.println(instanceGeneratorP.ratioRma());
+        }
+        System.out.println();
+
+        InstanceGeneratorP instanceGeneratorP = new InstanceGeneratorP(300);
+        instanceGeneratorP.generateInstances();
+        System.out.println(instanceGeneratorP.ratioRma());
+    }
 }
