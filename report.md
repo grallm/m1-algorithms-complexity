@@ -78,7 +78,7 @@ $$ {opt(G)}\leq{m} $$
 
 La borne inférieur pour sol(G) est :
 
-$$ {sol(G)=}\geq{\frac{m}{2}} $$
+$$ {sol(G)}\geq{\frac{m}{2}} $$
 Car l'algorithme Approx-SGC partage les arrêtes en deux parties puis on choisit la plus grande partie. Ainsi le plus petit ensemble possède donc la moitié des arrêtes.
 
  $$ {sol(G)}\geq{\frac{m}{2}} $$
