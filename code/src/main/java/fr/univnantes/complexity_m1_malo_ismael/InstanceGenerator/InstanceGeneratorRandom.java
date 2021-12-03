@@ -1,21 +1,35 @@
 package fr.univnantes.complexity_m1_malo_ismael.InstanceGenerator;
 
 import fr.univnantes.complexity_m1_malo_ismael.MMInstance.InstanceRandom;
+import fr.univnantes.complexity_m1_malo_ismael.MMInstance.MMInstance;
+import fr.univnantes.complexity_m1_malo_ismael.algorithms.AlgorithmResult;
+import fr.univnantes.complexity_m1_malo_ismael.algorithms.MMAlgorithms;
 
+import java.lang.instrument.Instrumentation;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class InstanceGeneratorRandom implements InstanceGenerator {
-    // Number of different instances
+    /**
+     * Number of different instances
+     */
     int m;
-    // Number of different instances
+    /**
+     * Number of different instances
+     */
     int n;
-    // Number of different instances
+    /**
+     * Number of different instances
+     */
     int k;
-    // Minimal duration
+    /**
+     * Minimal duration
+     */
     int dmin;
-    // Maximal duration
+    /**
+     * Maximal duration
+     */
     int dmax;
 
     /**
@@ -54,6 +68,14 @@ public class InstanceGeneratorRandom implements InstanceGenerator {
         scanner.close();
     }
 
+    public InstanceGeneratorRandom(int m, int n, int k, int dmin, int dmax) {
+        this.m = m;
+        this.n = n;
+        this.k = k;
+        this.dmin = dmin;
+        this.dmax = dmax;
+    }
+
     @Override
     public void generateInstances () {
         instanceRandoms = new ArrayList<>();
@@ -66,6 +88,19 @@ public class InstanceGeneratorRandom implements InstanceGenerator {
 
     @Override
     public void executeAlgorithms() {
-        System.out.println("Executed IRandom");
+        System.out.println("Executing Ir (k = " + instanceRandoms.size() + ")");
+
+        double lsaRatioAvg = 0, lptRatioAvg = 0, rmaRatioAvg = 0;
+
+        // Execute all 3 algorithms for each instance
+        for (InstanceRandom instanceRandom : instanceRandoms) {
+            lsaRatioAvg += MMAlgorithms.LSA((MMInstance) instanceRandom.clone()).getRatio();
+            lptRatioAvg += MMAlgorithms.LPT((MMInstance) instanceRandom.clone()).getRatio();
+            rmaRatioAvg += MMAlgorithms.RMA((MMInstance) instanceRandom.clone()).getRatio();
+        }
+
+        System.out.println("\nRatio LSA : " + lsaRatioAvg / instanceRandoms.size());
+        System.out.println("Ratio LSA : " + lptRatioAvg / instanceRandoms.size());
+        System.out.println("Ratio RMA : " + rmaRatioAvg / instanceRandoms.size());
     }
 }

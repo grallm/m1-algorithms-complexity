@@ -11,4 +11,4 @@
 
 ## Compile report to PDF
 `Markdown Latex` has to be converted to PDF with `pandoc` and `pdflatex` (ex: [Basic TeX for macOS](https://www.tug.org/mactex/morepackages.html))
-- macOS `pandoc rapport.md -o rapport.pdf --pdf-engine=/Library/TeX/texbin/pdflatex`
+- macOS `pandoc report.md -o rapport.pdf --pdf-engine=/Library/TeX/texbin/pdflatex`
