@@ -1,5 +1,5 @@
 % Distanciel : Algorithmes Approchés pour deux problèmes d'optimisation : Max-SGC et MIN MAKESPAN
-% Ismael BENBRIK--Kerhamon; Malo GRALL
+% Ismael BENBRIK--KERHAMON; Malo GRALL
 % Décembre 2021
 
 ## Partie 1 : le problème Max-SGC
@@ -29,7 +29,7 @@ La taille du certificat et la verification sont polynomiales donc on peut conclu
 
 #### A) Attribution aux hasards des sommets :
 
-La valeur des sommets est deja attribué tel que $ 1 \leq  p \leq n $ donc on garde cette attribution de $G$.
+La valeur des sommets est deja attribué tel que $$ 1 \leq  p \leq n $$ donc on garde cette attribution de $G$.
 
 #### B) Séparation des Arcs dans l'ensemble A1 ou A2.
 
@@ -48,9 +48,9 @@ La valeur des sommets est deja attribué tel que $ 1 \leq  p \leq n $ donc on ga
 
 Pour n'importe quel graphe ordonnée $G$ contenant au moins un circuit tel que $A'$ l'ensemble des Arcs( i , j ) :
 
-- Soit $ A' = A1 $ tels que $i > j$ . Comme $G$ possède au moins un circuit alors il existe un chemin $i$ à $i$ en passant par $j$. Mais comme on a séparé les arrêtes en deux parties.Ainsi il existe dans l'ensemble $A2$ au moins une $ \frac{m}{2} -1 $ arrêtes avec un $i > j$ donc $A'$ ne contient pas de circuit car G est ordonnée. 
+- Soit $ A' = A1 $ tels que $i > j$ . Comme $G$ possède au moins un circuit alors il existe un chemin $i$ à $i$ en passant par $j$. Mais comme on a séparé les arrêtes en deux parties.Ainsi il existe dans l'ensemble $A2$ au moins une $$ \frac{m}{2} -1 $$ arrêtes avec un $i > j$ donc $A'$ ne contient pas de circuit car G est ordonnée. 
 
-- Soit $ A' = A2 $ tels que $ i < j $ . Comme $G$ possède au moins un circuit alors il existe un chemin $i$ à $i$ en passant par $j$. Mais comme on a séparé les arrêtes en deux parties.Ainsi il existe dans l'ensemble $A1$ au moins une $ \frac{m}{2} -1 $ arrêtes avec un $ i < j $ donc $A'$ ne contient pas de circuit car G est ordonnée. 
+- Soit $ A' = A2 $ tels que $ i < j $ . Comme $G$ possède au moins un circuit alors il existe un chemin $i$ à $i$ en passant par $j$. Mais comme on a séparé les arrêtes en deux parties.Ainsi il existe dans l'ensemble $A1$ au moins une $$ \frac{m}{2} -1 $$ arrêtes avec un $ i < j $ donc $A'$ ne contient pas de circuit car G est ordonnée. 
 
 Si G ne contient pas de circuit alors A' n'en contiendra pas non plus.
 Donc pour tout graphe donné en entrer. L'ensemble $ A' $ ne formera pas de circuit.
