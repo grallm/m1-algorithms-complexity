@@ -2,10 +2,8 @@ package fr.univnantes.complexity_m1_malo_ismael.InstanceGenerator;
 
 import fr.univnantes.complexity_m1_malo_ismael.MMInstance.InstanceRandom;
 import fr.univnantes.complexity_m1_malo_ismael.MMInstance.MMInstance;
-import fr.univnantes.complexity_m1_malo_ismael.algorithms.AlgorithmResult;
 import fr.univnantes.complexity_m1_malo_ismael.algorithms.MMAlgorithms;
 
-import java.lang.instrument.Instrumentation;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -83,7 +81,7 @@ public class InstanceGeneratorRandom implements InstanceGenerator {
             instanceRandoms.add(new InstanceRandom(m, n, dmax, dmin));
         }
 
-        System.out.println("\n" + k + " instances générées avec " + m + " machines et " + n + " tâches");
+        // System.out.println("\n" + k + " instances générées avec " + m + " machines et " + n + " tâches");
     }
 
     @Override
@@ -102,5 +100,35 @@ public class InstanceGeneratorRandom implements InstanceGenerator {
         System.out.println("\nRatio LSA : " + lsaRatioAvg / instanceRandoms.size());
         System.out.println("Ratio LPT : " + lptRatioAvg / instanceRandoms.size());
         System.out.println("Ratio RMA : " + rmaRatioAvg / instanceRandoms.size());
+    }
+
+    public double executeLsa() {
+        double lsaRatioAvg = 0;
+
+        for (InstanceRandom instanceRandom : instanceRandoms) {
+            lsaRatioAvg += MMAlgorithms.LSA((MMInstance) instanceRandom.clone()).getRatio();
+        }
+
+        return lsaRatioAvg / instanceRandoms.size();
+    }
+
+    public double executeLpt() {
+        double lsaRatioAvg = 0;
+
+        for (InstanceRandom instanceRandom : instanceRandoms) {
+            lsaRatioAvg += MMAlgorithms.LPT((MMInstance) instanceRandom.clone()).getRatio();
+        }
+
+        return lsaRatioAvg / instanceRandoms.size();
+    }
+
+    public double executeRma() {
+        double lsaRatioAvg = 0;
+
+        for (InstanceRandom instanceRandom : instanceRandoms) {
+            lsaRatioAvg += MMAlgorithms.RMA((MMInstance) instanceRandom.clone()).getRatio();
+        }
+
+        return lsaRatioAvg / instanceRandoms.size();
     }
 }
