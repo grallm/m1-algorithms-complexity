@@ -1,5 +1,6 @@
-# Distanciel : Algorithmes Approchés pour deux problèmes d'optimisation : Max-SGC et MIN MAKESPAN #
-Ismael BENBRIK--Kerhamon et Malo GRALL
+% Distanciel : Algorithmes Approchés pour deux problèmes d'optimisation : Max-SGC et MIN MAKESPAN
+% Ismael BENBRIK--Kerhamon; Malo GRALL
+% Décembre 2021
 
 ## Partie 1 : le problème Max-SGC
 ### 1. Le problème MAX-SGC est un problème d'optimisation. Écrire, sous la forme NOM/INSTANCE/QUESTION le problème de décision associé à MAX-SGC.
@@ -14,8 +15,8 @@ Taille des donnée : $|G'|$ est la taille du certificat. Donc la taille du certi
 
 Vérification : 
 
-- $G'$ possède bien $k$ sommets et qu'ils appartiennent au graphe$ G => O(n+n²) = O(n)$
-- $G'$ ne possède pas de circuit $O( k*m + m² )$ avec $m$ le nombre d'Arc
+- $G'$ possède bien $k$ sommets et qu'ils appartiennent au graphe $ G => O(n+n^2) = O(n)$
+- $G'$ ne possède pas de circuit $O( k*m + m^2 ) $ avec $m$ le nombre d'Arc
   
     Ainsi la vérification se fait en temps polynomial.
 
@@ -28,7 +29,7 @@ La taille du certificat et la verification sont polynomiales donc on peut conclu
 
 #### A) Attribution aux hasards des sommets :
 
-La valeur des sommets est deja attribué tel que $1<=p<=n$ donc on garde cette attribution de $G$.
+La valeur des sommets est deja attribué tel que $ 1 \leq  p \leq n $ donc on garde cette attribution de $G$.
 
 #### B) Séparation des Arcs dans l'ensemble A1 ou A2.
 
@@ -47,17 +48,17 @@ La valeur des sommets est deja attribué tel que $1<=p<=n$ donc on garde cette a
 
 Pour n'importe quel graphe ordonnée $G$ contenant au moins un circuit tel que $A'$ l'ensemble des Arcs( i , j ) :
 
-- Soit $A' = A1 $ tels que $i > j$ . Comme $G$ possède au moins un circuit alors il existe un chemin $i$ à $i$ en passant par $j$. Mais comme on a séparé les arrêtes en deux parties.Ainsi il existe dans l'ensemble $A2$ au moins une $ \frac{m}{2} -1 $ arrêtes avec un $i > j$ donc $A'$ ne contient pas de circuit car G est ordonnée. 
+- Soit $ A' = A1 $ tels que $i > j$ . Comme $G$ possède au moins un circuit alors il existe un chemin $i$ à $i$ en passant par $j$. Mais comme on a séparé les arrêtes en deux parties.Ainsi il existe dans l'ensemble $A2$ au moins une $ \frac{m}{2} -1 $ arrêtes avec un $i > j$ donc $A'$ ne contient pas de circuit car G est ordonnée. 
 
-- Soit $A' = A2 $ tels que $i < j$ . Comme $G$ possède au moins un circuit alors il existe un chemin $i$ à $i$ en passant par $j$. Mais comme on a séparé les arrêtes en deux parties.Ainsi il existe dans l'ensemble $A1$ au moins une $ \frac{m}{2} -1 $ arrêtes avec un $i < j$ donc $A'$ ne contient pas de circuit car G est ordonnée. 
+- Soit $ A' = A2 $ tels que $ i < j $ . Comme $G$ possède au moins un circuit alors il existe un chemin $i$ à $i$ en passant par $j$. Mais comme on a séparé les arrêtes en deux parties.Ainsi il existe dans l'ensemble $A1$ au moins une $ \frac{m}{2} -1 $ arrêtes avec un $ i < j $ donc $A'$ ne contient pas de circuit car G est ordonnée. 
 
 Si G ne contient pas de circuit alors A' n'en contiendra pas non plus.
-Donc pour tout graphe donné en entrer. L'ensemble $A'$ ne formera pas de circuit.
+Donc pour tout graphe donné en entrer. L'ensemble $ A' $ ne formera pas de circuit.
 
 ### 5. Approx-SGC est-il polynomial ? Justifier.
 
 - Partie A : $O( n )$, parcours tous les sommets.
-- Partie B : $O( n² )$, parcours tous les Arcs et ajoute dans les sommets $A1$ ou $A2$.
+- Partie B : $O( n^2 )$, parcours tous les Arcs et ajoute dans les sommets $A1$ ou $A2$.
 - Partie C : $O( n )$, parcours l'ensemble A le plus grand.
   Donc pour tous les parties, le temps est polynomial ainsi Approx-SGC est polynomial.
 
