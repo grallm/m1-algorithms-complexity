@@ -57,4 +57,8 @@ public class InstanceGeneratorP implements InstanceGenerator {
     public double ratioLsa () {
         return MMAlgorithms.LSA((MMInstance) instanceP.clone()).getRatio();
     }
+
+    public double ratioLpt () {
+        return MMAlgorithms.LPT((MMInstance) instanceP.clone()).getRatio();
+    }
 }

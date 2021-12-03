@@ -116,3 +116,17 @@ On remarque que le ratio se rapproche rapidement de 2 et ne dépasse pas 2, mêm
 Plus p est grand, plus la différence entre la dernière tâche (2p) est grande, ce qui fait qu'en l'affectant à une machine en dernier, à la première, on se retrouve avec une machine ayant la même durée que les autres machines, plus `2p`. 
 
 2p étant bien plus grand que toutes les autres durées de tâches, sa valeur écrase le reste, d'où le ratio de 2.
+
+### 5. Campagne de tests pour l'algorithme LPT avec les instances de type Ip
+| p  | ratio LSA | p  | ratio LSA | p   | ratio LSA |
+| -- | --------- | -- | --------- | --- | --------- |
+| **1**  | 1         | **15** | 1         | **70**  | 1         |
+| **2**  | 1         | **20** | 1         | **80**  | 1         |
+| **3**  | 1         | **25** | 1         | **90**  | 1         |
+| **4**  | 1         | **30** | 1         | **100** | 1         |
+| **5**  | 1         | **35** | 1         | **120** | 1         |
+| **6**  | 1         | **40** | 1         | **140** | 1         |
+| **7**  | 1         | **45** | 1         | **160** | 1         |
+| **8**  | 1         | **50** | 1         | **180** | 1         |
+| **9**  | 1         | **55** | 1         | **200** | 1         |
+| **10** | 1         | **60** | 1         | **300** | 1         |
