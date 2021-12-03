@@ -47,7 +47,7 @@ La valeur des sommets est deja attribué tel que $1<=p<=n$ donc on garde cette a
 
 Pour n'importe quel graphe ordonnée $G$ contenant au moins un circuit tel que $A'$ l'ensemble des Arcs( i , j ) :
 
-- Soit $A' = A1 $ tels que $i > j$ . Comme $G$ possède au moins un circuit alors il existe un chemin $i$ à $i$ en passant par $j$. Mais comme on a séparé les arrêtes en deux parties.Ainsi il existe dans l'ensemble $A2$ au moins une $ \frac{m}{2} -1 $ arrêtes avec un $i < j$ donc $A'$ ne contient pas de circuit car G est ordonnée. 
+- Soit $A' = A1 $ tels que $i > j$ . Comme $G$ possède au moins un circuit alors il existe un chemin $i$ à $i$ en passant par $j$. Mais comme on a séparé les arrêtes en deux parties.Ainsi il existe dans l'ensemble $A2$ au moins une $ \frac{m}{2} -1 $ arrêtes avec un $i > j$ donc $A'$ ne contient pas de circuit car G est ordonnée. 
 
 - Soit $A' = A2 $ tels que $i < j$ . Comme $G$ possède au moins un circuit alors il existe un chemin $i$ à $i$ en passant par $j$. Mais comme on a séparé les arrêtes en deux parties.Ainsi il existe dans l'ensemble $A1$ au moins une $ \frac{m}{2} -1 $ arrêtes avec un $i < j$ donc $A'$ ne contient pas de circuit car G est ordonnée. 
 
