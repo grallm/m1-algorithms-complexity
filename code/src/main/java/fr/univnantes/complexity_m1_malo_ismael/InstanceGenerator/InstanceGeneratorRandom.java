@@ -81,7 +81,7 @@ public class InstanceGeneratorRandom implements InstanceGenerator {
             instanceRandoms.add(new InstanceRandom(m, n, dmax, dmin));
         }
 
-        // System.out.println("\n" + k + " instances générées avec " + m + " machines et " + n + " tâches");
+        System.out.println("\n" + k + " instances générées avec " + m + " machines et " + n + " tâches");
     }
 
     @Override
