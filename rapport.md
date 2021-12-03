@@ -20,7 +20,7 @@ Vérification :
 La taille du certificat et la verification sont polynomiales donc on peut conclure que DEC-SGC est dans NP.
 
 
-## 3. Appliquer l’algorithme Approx-SGC sur le graphe orienté ci-dessus, en utilisant la numérotation des sommets qui y est indiquée. En particulier, indiquer les contenus de A1, A2 et A′
+## 3. Appliquer l'algorithme Approx-SGC sur le graphe orienté ci-dessus, en utilisant la numérotation des sommets qui y est indiquée. En particulier, indiquer les contenus de A1, A2 et A'
 
 ![](img/G.PNG)
 
@@ -41,7 +41,7 @@ La valeur des sommets est deja attribué tel que 1<=p<=n donc on garde cette att
 
 ### C) L'ensemble qui contient le plus d'Arcs est l'ensemble A2 donc A' = A2.
 
-## 4.  Montrer que, quel que soit le graphe orienté G donné en entrée, les arcs de l’ensemble A′ calculé par Approx-SGC ne forment jamais de circuit.
+## 4.  Montrer que, quel que soit le graphe orienté G donné en entrée, les arcs de l'ensemble A' calculé par Approx-SGC ne forment jamais de circuit.
 
 
 
@@ -58,7 +58,7 @@ La valeur des sommets est deja attribué tel que 1<=p<=n donc on garde cette att
 
 Il y a autant d'ensemble A1 que A2 ainsi Approx-SGC ne fournit pas une solution optimale sans graphe. Car la solution optimal du graphe est tout les sommets soit 5.
 
-## 7. Pour tout graphe orienté G, donner une borne supérieure pour opt(G), qui dépend de m (le nombre d’arcs du graphe). Justifier.
+## 7. Pour tout graphe orienté G, donner une borne supérieure pour opt(G), qui dépend de m (le nombre d'arcs du graphe). Justifier.
 
 La borne maximum est un graphe qui ne possède pas de circuit ainsi opt(G) est m. m qui est le nombre d'Arcs.
 
@@ -73,7 +73,7 @@ Car l'algorithme Approx-SGC partage les arrêtes en deux parties puis on choisit
 
  $$ {sol(G)}\geq{\frac{m}{2}} $$
 
-## 9. En déduire un ratio d’approximation pour l’algorithme Approx-SGC.
+## 9. En déduire un ratio d'approximation pour l'algorithme Approx-SGC.
 
 On a :
 
@@ -81,7 +81,7 @@ $$ \frac{m}{2}\geq{opt(G)}{\geq{m}} $$
 
 Ainsi le ratio d'approximation est de 2.
 
-## 10. Quel ratio d’approximation est obtenu par Approx-SGC sur le graphe orienté de la figure ? Justifier.
+## 10. Quel ratio d'approximation est obtenu par Approx-SGC sur le graphe orienté de la figure ? Justifier.
 
  La figure possède 11 arrêtes , l'ensemble le plus grand possède 6 éléments.
  
