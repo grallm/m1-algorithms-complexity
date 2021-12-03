@@ -130,3 +130,10 @@ Plus p est grand, plus la différence entre la dernière tâche (2p) est grande,
 | **8**  | 1         | **50** | 1         | **180** | 1         |
 | **9**  | 1         | **55** | 1         | **200** | 1         |
 | **10** | 1         | **60** | 1         | **300** | 1         |
+
+### 6. Que remarquez-vous en ce qui concerne le ratio LPT sur les instances de type Ip quand p grandit ?
+On constate que le ratio est toujours égal à 1. Ce qui veut dire que la machien avec la plus longue durée, a sa durée égale à la durée de la plus longue tâches.
+
+Ce qui veut dire qu'en affectant la tâches la plus longue en premier, la répartition est idéale, la durée total étant égale à la durée de la plus longue tâche.
+
+Avec une étape en plus on constate que LPT est en moyenne 2 fois plus efficace que LSA.
