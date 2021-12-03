@@ -1,5 +1,6 @@
-# Distanciel : Algorithmes Approchés pour deux problèmes d'optimisation : Max-SGC et MIN MAKESPAN #
-Ismael BENBRIK et Malo GRALL
+% Distanciel : Algorithmes Approchés pour deux problèmes d'optimisation : Max-SGC et MIN MAKESPAN
+% Ismael BENBRIK; Malo GRALL
+% Décembre 2021
 
 ## Partie 1 : le problème Max-SGC
 ### 1. Le problème MAX-SGC est un problème d'optimisation. Écrire, sous la forme NOM/INSTANCE/QUESTION le problème de décision associé à MAX-SGC.
