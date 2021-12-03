@@ -93,11 +93,15 @@ Ainsi le ratio d'approximation est de 2.
 
 ## Partie 2 : le problème MIN MAKESPAN
 ### 1. Complexité en temps et au pire de la génération des instances
-#### Complexité génération Ip
-$$C(new InstanceP(p)) = 8p^2 + 4p + 13$$
-donc la complexité est polynomiale et d'ordre $$O(p^2)$$
+#### **Complexité génération `Ip`**
+$$C(new InstanceP(p)) = 8p^2 + 4p + 20$$
+donc la complexité est polynomiale et d'ordre $$O(n^2)$$
 
-#### Complexité génération Ir
+#### **Complexité génération `Ir`**
+$$C(new InstanceRandom(m, n, dmax, dmin)) = 9n + 4m + 12$$
+or on génère `k` instances avec une boucle
+$$C(new InstanceRandom(m, n, dmax, dmin)) = k(9n + 4m + 12 + 6) + 4$$
+on a donc une complexité polynomiale $$O(n^2)$$
 
 ### 2. Complexité en temps et au pire de chacun des trois algorithmes
 
