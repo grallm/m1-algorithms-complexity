@@ -103,7 +103,20 @@ or on génère `k` instances avec une boucle
 $$C(new InstanceRandom(m, n, dmax, dmin)) = k(9n + 4m + 12 + 6) + 4$$
 on a donc une complexité polynomiale $$O(n^2)$$
 
+La coût de la génération d'une instance `Ir` est équivalent à celui de la génération d'une instance `Ir`.
+
 ### 2. Complexité en temps et au pire de chacun des trois algorithmes
+L'algorithme `LSA` possédant une boucle imbriquée, la complexité est
+$$O(n^2)$$
+
+L'algorithme `LPT` possédant la même structure, la complexité est
+$$O(n^2)$$
+
+Quant à l'algorithme `RMA` il n'y a pas de boucle imbriquée, la complexité est donc
+$$O(n)$$
+
+`RMA` est donc le plus efficace en termes de complexité
+
 
 ### 3. Campagne de tests pour l'algorithme LSA avec les instances de type Ip
 | p  | ratio LSA   | p  | ratio LSA   | p   | ratio LSA   |
@@ -161,7 +174,7 @@ Avec une étape en plus on constate que LPT est en moyenne 2 fois plus efficace 
 | **9**  | 2.052631579 | **55** | 2           | **200** | 1.880299252 |
 | **10** | 1.761904762 | **60** | 2.090909091 | **300** | 2.03327787  |
 
-On remarque que le ratio est toujours supérieur à 1, et même souvent supérieur à 2. C'est donc l'algorithme le moins efficace en terme de répartition pour ces conditions, pour des instances du type `Ip`.
+On remarque que le ratio est toujours supérieur à 1, et même souvent supérieur à 2. C'est donc l'algorithme le moins efficace en termes de répartition pour ces conditions, pour des instances du type `Ip`.
 
 On ne remarque pas de cas où l'algorithme RMA peut être plus avantageux.
 
